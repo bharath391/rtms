@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Track Inspection - Past Anomalies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="past-anomalies_style.css">
+</head>
+<body>
+  <nav>
+    <div class="title">RAILWAY TRACK INSPECTION</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="past-anomalies.html" class="active">Past Anomalies</a>
+      <a href="predictions.html">Predictions</a>
+      <a href="#">Login</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Past Anomaly Records</h1>
+    <p>Browse through the history of track anomalies detected by the system</p>
+  </header>
+
+  <div class="container">
+    <div class="filters">
+      <div>
+        <label for="type-filter">Filter by type:</label>
+        <select id="type-filter">
+          <option value="all">All Anomalies</option>
+          <option value="fire">Fire Detection</option>
+          <option value="water">Water Detection</option>
+          <option value="crack">Crack Detection</option>
+          <option value="obstacle">Obstacle Detection</option>
+        </select>
+      </div>
+      <div>
+        <label for="date-filter">Sort by:</label>
+        <select id="date-filter">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="anomaly-table" id="anomaly-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Date & Time</th>
+          <th>Location</th>
+          <th>Status/Action</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody id="anomaly-data">
+        <!-- Data will be populated by JavaScript -->
+      </tbody>
+    </table>
+
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <i class="fas fa-search"></i>
+      <h3>No anomalies found</h3>
+      <p>Try changing your filters or check back later</p>
+    </div>
+
+    <div class="pagination" id="pagination">
+      <!-- Pagination will be added by JavaScript -->
+    </div>
+  </div>
+
+  <div class="map-modal" id="map-modal">
+    <div class="map-modal-content">
+      <div class="map-modal-header">
+        <h3 id="modal-title">Anomaly Location</h3>
+        <button class="map-modal-close" id="modal-close">&times;</button>
+      </div>
+      <div id="modal-map"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 RAILWAY TRACK INSPECTION SYSTEM - VIT
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="past-anomalies_script.js"></script>
+</body>
+</html>

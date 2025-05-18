@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Predictions Dashboard</title>
+    <link rel="stylesheet" href="predictions_style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Anomaly Detection System</h1>
+        <h2>--under development--more data required for future predictions--</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="past-anomalies.html">Past Anomalies</a>
+            <a href="predictions.html" class="active">Predictions</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Predicted Anomalies</h2>
+        
+        <div class="dashboard-container">
+            <div class="left-panel">
+                <div class="controls">
+                    <label for="type-filter">Filter by type:</label>
+                    <select id="type-filter">
+                        <option value="all">All</option>
+                        <option value="fire">Fire</option>
+                        <option value="flood">Flood</option>
+                        <option value="obstruction">Obstruction</option>
+                    </select>
+                </div>
+                
+                <div id="predictions-container" class="cards-container"></div>
+            </div>
+            
+            <div class="right-panel">
+                <div class="visualization-tabs">
+                    <button class="tab-button active" data-tab="time-series">Time Series</button>
+                    <button class="tab-button" data-tab="histogram">Histogram</button>
+                    <button class="tab-button" data-tab="by-type">By Type</button>
+                    <button class="tab-button" data-tab="confidence">Confidence</button>
+                </div>
+                
+                <div class="visualization-content">
+                    <div id="time-series" class="tab-content active">
+                        <h3>Predictions Over Time</h3>
+                        <canvas id="timeSeriesChart"></canvas>
+                    </div>
+                    <div id="histogram" class="tab-content">
+                        <h3>Distribution by Month</h3>
+                        <canvas id="histogramChart"></canvas>
+                    </div>
+                    <div id="by-type" class="tab-content">
+                        <h3>Predictions by Type</h3>
+                        <canvas id="typeChart"></canvas>
+                    </div>
+                    <div id="confidence" class="tab-content">
+                        <h3>Confidence Levels</h3>
+                        <canvas id="confidenceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="latest-anomaly-section">
+            <h2>Latest Predicted Anomaly</h2>
+            <table id="latest-anomaly-table" class="detail-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Confidence</th>
+                        <th>Location</th>
+                        <th>ETA</th>
+                        <th>Predicted On</th>
+                        <th>Additional Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="no-data-row">
+                        <td colspan="6" class="no-data">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Anomaly Detection System</p>
+    </footer>
+
+    <!-- Firebase scripts would go here -->
+    <script src="firebase_config.js"></script>
+    <script src="predictions_script.js"></script>
+</body>
+</html>

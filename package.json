@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "firebase": "^11.7.3",
+    "latest-version": "^9.0.0",
+    "npm": "^11.3.0"
+  }
+}

@@ -1,0 +1,81 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Track Inspection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="index_style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="title">RAILWAY TRACK INSPECTION</div>
+      <div class="menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="past-anomalies.html">Past Anomalies</a>
+        <a href="predictions.html">Predictions</a>
+        <a href="#">Login</a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Track Monitoring Dashboard</h1>
+      <p>By Bharath, Yashwanth, Karthik | Vellore Institute of Technology</p>
+    </header>
+
+    <div id="map"></div>
+
+    <div class="statistics">
+      <div class="stat-card">
+        <div class="stat-icon fire"><i class="fas fa-fire"></i></div>
+        <div class="stat-value" id="fire-count">0</div>
+        <div class="stat-title">Fire Detections</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon water"><i class="fas fa-water"></i></div>
+        <div class="stat-value" id="water-count">0</div>
+        <div class="stat-title">Water Detections</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon crack"><i class="fas fa-puzzle-piece"></i></div>
+        <div class="stat-value" id="crack-count">0</div>
+        <div class="stat-title">Crack Detections</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon obstacle"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="stat-value" id="obstacle-count">0</div>
+        <div class="stat-title">Obstacle Detections</div>
+      </div>
+    </div>
+
+    <section class="anomaly-log">
+      <div class="anomaly-container">
+        <div class="anomaly-header">
+          <div class="anomaly-title">Recent Anomalies</div>
+          <a href="past-anomalies.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div id="loading" class="loading">
+          <i class="fas fa-spinner"></i>
+          <p>Loading recent anomalies...</p>
+        </div>
+        <div id="empty-log" class="empty-log" style="display: none;">
+          <i class="fas fa-check-circle"></i>
+          <p>No anomalies detected recently. All systems normal.</p>
+        </div>
+        <div id="anomaly-log">
+          <!-- Anomalies will be appended here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      &copy; 2025 RAILWAY TRACK INSPECTION SYSTEM - VIT
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="index_script.js"></script>
+  </body>
+  </html>

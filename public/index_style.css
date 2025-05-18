@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  body {
+    background-color: #f4f6f9;
+    color: #333;
+  }
+  nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  nav .menu {
+    display: flex;
+    gap: 2rem;
+  }
+  nav .menu a {
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav .menu a:hover {
+    color: #0077ff;
+  }
+  nav .menu a.active {
+    color: #0077ff;
+    border-bottom: 2px solid #0077ff;
+  }
+  header {
+    text-align: center;
+    padding: 2rem;
+  }
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  header p {
+    font-size: 1rem;
+    color: #666;
+  }
+  #map {
+    height: 400px;
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .anomaly-log {
+    padding: 2rem;
+  }
+  .anomaly-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .anomaly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+  }
+  .anomaly-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+  .view-all {
+    text-decoration: none;
+    color: #0077ff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .anomaly {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ff3b3b;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.2s;
+  }
+  .anomaly:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .anomaly:last-child {
+    margin-bottom: 0;
+  }
+  .anomaly.fire {
+    border-left-color: #ff3b3b;
+  }
+  .anomaly.water {
+    border-left-color: #3182ce;
+  }
+  .anomaly.crack {
+    border-left-color: #38a169;
+  }
+  .anomaly.obstacle {
+    border-left-color: #d53f8c;
+  }
+  .anomaly-type {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  .anomaly-type.fire {
+    color: #ff3b3b;
+  }
+  .anomaly-type.water {
+    color: #3182ce;
+  }
+  .anomaly-type.crack {
+    color: #38a169;
+  }
+  .anomaly-type.obstacle {
+    color: #d53f8c;
+  }
+  .anomaly-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  .anomaly-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  .anomaly-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.2;
+  }
+  .statistics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem;
+  }
+  .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .stat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .stat-icon.fire {
+    color: #ff3b3b;
+  }
+  .stat-icon.water {
+    color: #3182ce;
+  }
+  .stat-icon.crack {
+    color: #38a169;
+  }
+  .stat-icon.obstacle {
+    color: #d53f8c;
+  }
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .stat-title {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  .loading i {
+    animation: spin 1s linear infinite;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .empty-log {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
