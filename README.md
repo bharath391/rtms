@@ -39,10 +39,12 @@ The system continuously monitors critical parameters such as fire presence, wate
 
 ---
 ## web page components
--Home page contains last detected anomalie(crack , fire , flood , other) location 
--Past anomalies page contains record of the previous detected anomalies and resolved anomalies are marked 
--prediction's page template is added - future scope - need to collect data and make an analysis on the collected data for future predections on cracks , temp , floods , obstacles and other !
+- Home page contains last detected anomalie(crack , fire , flood , other) location 
+- Past anomalies page contains record of the previous detected anomalies and resolved anomalies are marked 
+- prediction's page template is added - future scope - need to collect data and make an analysis on the collected data for future predections on cracks , temp , floods , obstacles 
+  and other !
 
+---
 
 ## How It Works
 1. The ESP32 connects to Wi-Fi using provided credentials.
