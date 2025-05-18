@@ -46,6 +46,9 @@ The system continuously monitors critical parameters such as fire presence, wate
 
 ---
 
+## Database strcture 
+- ![image](https://github.com/user-attachments/assets/a829bb42-b604-4fbd-9c50-bac9f9c9179a)
+
 ## How It Works
 1. The ESP32 connects to Wi-Fi using provided credentials.
 2. Sensor readings are continuously gathered: fire, water, IR obstacle detection, and ultrasonic distance for crack severity.
